@@ -1,0 +1,274 @@
+# Ukrainian translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-10-04 16:49+0300\n"
+"PO-Revision-Date: 2019-07-03 20:10+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: uk\n"
+"Language-Team: uk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: bot/__main__.py:12
+msgid "I started at {now}"
+msgstr "Я запустився в {now}"
+
+#: bot/__main__.py:25
+msgid "I turned off at {now}"
+msgstr "Я виключився в {now}"
+
+#: bot/keyboards.py:22
+msgid "🔍 Browse"
+msgstr "🔍 Огляд"
+
+#: bot/keyboards.py:22
+msgid "💫 Help"
+msgstr "💫 Допомога"
+
+#: bot/keyboards.py:22
+msgid "📞 Contacts"
+msgstr "📞 Контакти"
+
+#: bot/keyboards.py:43
+msgid ":white_small_square: Skip"
+msgstr ":white_small_square: Пропустити"
+
+#: bot/keyboards.py:47
+msgid ":black_small_square: Skip all"
+msgstr ":black_small_square: Пропустити все"
+
+#: bot/keyboards.py:75
+msgid ":moneybag: Buy {price}"
+msgstr ":moneybag: Купити {price}"
+
+#: bot/texts.py:3
+msgid ""
+"Welcome $first_name, I $bot_mention will help you pick up and buy "
+"wonderful shoes.\n"
+"To continue, use the keyboard below or commands described in /help."
+msgstr ""
+"Вітаю $first_name, Я $bot_mention допоможу тобі підібрати і купити чудове"
+" взуття.\n"
+"Щоб продовжити, використайте клавіатуру нижче або команди описані в /help."
+
+#: bot/texts.py:10
+msgid ""
+"When communicating with the bot, your primary command will be /browse or "
+"/b - which allows you to pick and operate, including purchasing, some "
+"shoes. Type /contacts to be able to contact us, /help to display this "
+"message. Note that each of the above commands has a keyboard counterpart."
+msgstr ""
+"Коли спілкуєтесь з нашим ботом, Вашою основною командою буде /browse або "
+"/b - що дозволяє вибрати та оперувати, включно покупку, певне взуття. "
+"Наберіть /contacts щоб мати можливість зв’язатися з нами, /help щоб "
+"показати це повідомлення. Майте на увазі, що кожна з вищезазначених "
+"команд має свій клавіатурний аналог."
+
+#: bot/texts.py:18
+msgid ""
+"You can contact us in any of the following ways:\n"
+":telephone_receiver: Phone\n"
+"$phones\n"
+"\n"
+":e-mail: Email\n"
+"$emails"
+msgstr ""
+"Ви можете зв’язатися з нами будь-яким з слідуючих способів:\n"
+":telephone_receiver: Телефон\n"
+"$phones\n"
+"\n"
+":e-mail: Електронна пошта\n"
+"$emails"
+
+#: bot/texts.py:28
+msgid ""
+"I see, you have chosen this model.\n"
+"A very good choice.\n"
+"I believe you will like it. :wink: :thumbs_up:"
+msgstr ""
+"Я бачу Ви вибрали цю модель.\n"
+"Дуже вдалий вибір.\n"
+"Я вірю що Вам сподобається. :wink: :thumbs_up:"
+
+#: bot/texts.py:35
+msgid ""
+"*Order* created _${datetime_now}_ on sum _$total_amount ${currency}_\n"
+"\n"
+"[$product_name $product_code]($product_url) of size *$size*\n"
+"\n"
+"```\n"
+"Customer name: $name\n"
+"Phone number: $phone_number\n"
+"Country code: $country_code\n"
+"State: $state\n"
+"City: $city\n"
+"Street 1: $street_line1\n"
+"Street 2: $street_line2\n"
+"Post code: $post_code\n"
+"```"
+msgstr ""
+"*Заказ* створений _${datetime_now}_ на суму _$total_amount ${currency}_\n"
+"\n"
+"[$product_name $product_code]($product_url) *$size* розміру\n"
+"\n"
+"```\n"
+"Ім’я покупця: $name\n"
+"Номер телефону: $phone_number\n"
+"Код країни: $country_code\n"
+"Область: $state\n"
+"Місто: $city\n"
+"Вулиця 1: $street_line1\n"
+"Вулиця 2: $street_line2\n"
+"Поштовий індекс: $post_code\n"
+"```"
+
+#: bot/dataclasses/product.py:31
+msgid "Code"
+msgstr "Код"
+
+#: bot/dataclasses/product.py:33 bot/settings/base.py:56
+msgid "Brand"
+msgstr "Бренд"
+
+#: bot/dataclasses/product.py:34 bot/settings/base.py:53
+msgid "Category"
+msgstr "Категорія"
+
+#: bot/dataclasses/product.py:35 bot/settings/base.py:55
+msgid "Season"
+msgstr "Сезон"
+
+#: bot/dataclasses/product.py:39 bot/settings/base.py:57
+msgid "Color"
+msgstr "Колір"
+
+#: bot/dataclasses/product.py:40
+msgid "Inner material"
+msgstr "Внутрішній матеріал"
+
+#: bot/dataclasses/product.py:41 bot/settings/base.py:59
+msgid "Outer material"
+msgstr "Зовнішній матеріал"
+
+#: bot/dataclasses/product.py:42
+msgid "Sole"
+msgstr "Підошва"
+
+#: bot/handlers/answer.py:54 bot/handlers/answer.py:81
+msgid "Please try again in a minute."
+msgstr "Будь ласка спробуйте знову через хвилину."
+
+#: bot/handlers/buy.py:52
+msgid "Price"
+msgstr "Ціна"
+
+#: bot/handlers/buy.py:79
+msgid "Wrong invoice link."
+msgstr "Неправильне посилання замовлення"
+
+#: bot/handlers/buy.py:103
+msgid ":shoe: Choose shoe size"
+msgstr ":shoe: Виберіть розмір взуття"
+
+#: bot/handlers/buy.py:160
+msgid "Something went wrong. Try again later."
+msgstr "Щось пішло не так. Спробуйте пізніше."
+
+#: bot/handlers/buy.py:171
+msgid ""
+":clap: :smile: Woah! Thank's for the purchase! We will contact you "
+"shortly."
+msgstr ""
+":clap: :smile: Ого! Дякую за покупку! Ми зв’яжемося з Вами найближчим "
+"часом."
+
+#: bot/handlers/commands.py:55
+msgid "What..? :confused: I can't recognize that."
+msgstr "Що..? :confused: Я не можу розпізнати це."
+
+#: bot/handlers/common.py:73
+msgid "No results, try to /browse again."
+msgstr "Немає результатів, спробуйте /browse знову."
+
+#: bot/handlers/common.py:117
+msgid ":wavy_dash: Select a {filter_title} option"
+msgstr ":wavy_dash: Виберіть {filter_title}"
+
+#: bot/product_answers/answers.py:35
+msgid ":link: Detail"
+msgstr ":link: Детально"
+
+#: bot/product_answers/answers.py:45
+msgid ":moneybag: Buy"
+msgstr ":moneybag: Купити"
+
+#: bot/product_answers/answers.py:95
+msgid ":arrow_backward: Previous"
+msgstr ":arrow_backward: Попередній"
+
+#: bot/product_answers/answers.py:116
+msgid ":arrow_forward: Next"
+msgstr ":arrow_forward: Наступний"
+
+#: bot/product_answers/answers.py:143
+msgid ":framed_picture: Pictures"
+msgstr ":framed_picture: Фото"
+
+#: bot/product_answers/answers.py:154
+msgid ":bookmark: Bookmark"
+msgstr ":bookmark: Закладка"
+
+#: bot/product_answers/captions.py:33
+msgid "New"
+msgstr "Новинка"
+
+#: bot/product_answers/captions.py:105
+msgid "Bookmark"
+msgstr "Закладка"
+
+#: bot/product_filters/constant_choices.py:4
+msgid "Winter"
+msgstr "Зима"
+
+#: bot/product_filters/constant_choices.py:5
+msgid "Spring"
+msgstr "Весна"
+
+#: bot/product_filters/constant_choices.py:6
+msgid "Summer"
+msgstr "Літо"
+
+#: bot/product_filters/constant_choices.py:7
+msgid "Fall"
+msgstr "Осінь"
+
+#: bot/settings/base.py:50
+msgid "Gender"
+msgstr "Стать"
+
+#: bot/settings/base.py:64
+msgid "Nova Poshta (Сustomer pays shipping)"
+msgstr "Нова Пошта (Клієнт сплачує доставку)"
+
+#: bot/settings/base.py:64
+msgid "Nova Poshta"
+msgstr "Нова Пошта"
+
+#: bot/settings/base.py:65
+msgid "Local pickup (Mykolaiv)"
+msgstr "Самовивіз (Миколаїв)"
+
+#: bot/settings/base.py:65
+msgid "Local pickup"
+msgstr "Самовивіз"
+

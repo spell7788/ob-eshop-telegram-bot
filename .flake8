@@ -1,0 +1,8 @@
+[flake8]
+ignore = D203,W503
+max-complexity = 10
+max-line-length = 88
+exclude =
+    .git,
+    .mypy_cache
+    __pycache__

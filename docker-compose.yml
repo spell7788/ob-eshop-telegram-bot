@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  bot:
+    image: ahqrry/ob-eshop-telegram-bot:bot
+    build:
+      context: .
+      dockerfile: ./docker/bot/Dockerfile
+    env_file: ./envs/.env.production
+    networks:
+      - bot_network
+      - proxy
+    deploy:
+      replicas: 1
+
+  cache:
+    image: ahqrry/ob-eshop-telegram-bot:cache
+    build:
+      context: .
+      dockerfile: ./docker/redis-cache/Dockerfile
+    networks:
+      - bot_network
+      - proxy
+    deploy:
+      replicas: 1
+
+networks:
+  bot_network:
+  proxy:
+    external: true

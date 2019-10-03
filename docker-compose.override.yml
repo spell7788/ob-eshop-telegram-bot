@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  bot:
+    env_file: ./envs/.env.local
+    volumes:
+      - .:/app
+    depends_on:
+      - cache
+
+networks:
+  proxy:

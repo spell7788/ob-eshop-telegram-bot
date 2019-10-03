@@ -1,0 +1,31 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+black = "*"
+mypy = "*"
+isort = "*"
+
+[packages]
+aiogram = "*"
+emoji = "*"
+aiohttp = "*"
+furl = "*"
+aiodns = "*"
+cchardet = "*"
+marshmallow = "*"
+aioredis = "*"
+babel = "*"
+async-lru = "*"
+typing-extensions = "*"
+pytz = "*"
+environs = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
