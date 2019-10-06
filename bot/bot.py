@@ -6,6 +6,7 @@ import logging.config
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
 from aiogram.contrib.middlewares.i18n import I18nMiddleware
+from babel.support import LazyProxy
 from environs import Env
 
 env = Env()
@@ -26,4 +27,6 @@ dp.middleware.setup(i18n)
 
 _ = i18n.gettext
 
-N_ = i18n.lazy_gettext
+
+def N_(*args, **kwargs) -> LazyProxy:
+    return i18n.lazy_gettext(*args, enable_cache=False, **kwargs)
