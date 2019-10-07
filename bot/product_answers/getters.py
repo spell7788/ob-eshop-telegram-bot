@@ -2,44 +2,16 @@ import logging
 from functools import partial
 from typing import Any, Dict, Type, TypeVar
 
-import aiohttp
 from aiogram.dispatcher import FSMContext
-from furl import furl
 
 from ..bot import settings
+from ..client import Client
 from ..dataclasses import Product, ProductPage
-from ..http_session import HttpSession
 from ..product_filters import ProductFilters
 from ..schemas import ProductPageSchema
 from .answers import BookmarkAnswer, ProductAnswer, ProductSlideAnswer
 
 logger = logging.getLogger(__name__)
-
-
-def get_product_page_url(product_filters: ProductFilters) -> str:
-    f = furl(settings.API_BASE_URL)
-    f = f.add(
-        path="/shoes/",
-        args={"page_size": settings.PRODUCT_PAGE_SIZE, **product_filters},
-    )
-    return f.url
-
-
-async def fetch_product_page(product_filters: ProductFilters) -> Dict[str, Any]:
-    session = HttpSession.get_session()
-    page_url = get_product_page_url(product_filters)
-    logger.debug("Requesting product page from '%s'.", page_url)
-    try:
-        async with session.get(page_url) as response:
-            return await response.json()
-    except aiohttp.ClientError as e:
-        logger.exception(
-            "An error occurred while requesting the product page. "
-            "Page url: %s. Product filters: %s.",
-            page_url,
-            product_filters,
-        )
-        raise e
 
 
 async def get_product_page(
@@ -52,7 +24,7 @@ async def get_product_page(
     if cached_page and cached_page["filters"] == product_filters:
         raw_page = cached_page["page"]
     else:
-        raw_page = await fetch_product_page(product_filters)
+        raw_page = await Client().fetch_product_page(product_filters)
         cached_page = {"page": raw_page, "filters": product_filters.data}
         await state.update_data({settings.CACHED_PAGE_STORAGE_KEY: cached_page})
 

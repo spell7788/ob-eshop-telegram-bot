@@ -3,37 +3,15 @@ import operator
 from functools import partial
 from typing import Any, Callable, Dict, Hashable, Optional, Sequence, Tuple
 
-import aiohttp
-from async_lru import alru_cache
 from babel.support import LazyProxy
-from furl import furl
 
 from .. import callback_forms
-from ..bot import settings
-from ..http_session import HttpSession
+from ..bot import settings  # type: ignore
+from ..client import Client
 from ..utils import simple_repr
 from . import constant_choices
 
 logger = logging.getLogger(__name__)
-
-
-RawChoices = Sequence[Dict[str, Any]]
-
-
-async def fetch_filter_choices(api_route: str) -> RawChoices:
-    url = furl(settings.API_BASE_URL).add(path=api_route).url
-    logger.debug("Requesting filter choices from '%s'", url)
-    session = HttpSession.get_session()
-    try:
-        async with session.get(url) as response:
-            return await response.json()
-    except aiohttp.ClientError as e:
-        logger.exception(
-            "Can't fetch filters for API route '%s'. Filter choices url: %s",
-            api_route,
-            url,
-        )
-        raise e
 
 
 @simple_repr
@@ -61,7 +39,9 @@ class FilterChoice:
         return self.label
 
 
-@alru_cache
+RawChoices = Sequence[Dict[str, Any]]
+
+
 async def get_choices(
     filter_name: str,
     label_fields: Tuple[str],
@@ -71,7 +51,9 @@ async def get_choices(
 ) -> Sequence[FilterChoice]:
     api_endpoint = settings.PRODUCT_FILTERS[filter_name].api_endpoint
     if api_endpoint is not None:
-        choices = await fetch_filter_choices(api_endpoint)
+        client = Client()
+        choices = await client.fetch_filter_choices(api_endpoint)
+        logger.debug("Choices cache info: %s", client.fetch_filter_choices.cache_info())
     else:
         choices = getattr(constant_choices, f"{filter_name}_choices".upper())
 

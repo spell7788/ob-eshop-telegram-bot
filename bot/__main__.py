@@ -1,7 +1,6 @@
 from aiogram import Dispatcher, executor
 
-from .bot import _, bot, dp, settings
-from .http_session import HttpSession
+from .bot import _, bot, dp, get_http_session, settings
 from .utils import message_admins, tz_aware_now
 
 
@@ -15,7 +14,7 @@ async def on_startup(dispatcher: Dispatcher) -> None:
 
 
 async def on_shutdown(dispatcher: Dispatcher) -> None:
-    session = HttpSession.get_session()
+    session = get_http_session()
     await session.close()
     await dispatcher.storage.close()
     await dispatcher.storage.wait_closed()

@@ -47,16 +47,16 @@ _ = lambda s: s  # noqa
 
 PRODUCT_FILTERS: Dict[str, FilterSettings] = {
     "gender": FilterSettings(
-        _("Gender"), ("title",), api_endpoint="categories", query_name="category"
+        _("Gender"), ("title",), api_endpoint="/categories/", query_name="category"
     ),
     "category": FilterSettings(
-        _("Category"), ("title",), api_endpoint="categories", depends_on="gender"
+        _("Category"), ("title",), api_endpoint="/categories/", depends_on="gender"
     ),
     "season": FilterSettings(_("Season"), ("name",)),
-    "brand": FilterSettings(_("Brand"), ("name",), api_endpoint="brands"),
-    "color": FilterSettings(_("Color"), ("name",), api_endpoint="colors"),
+    "brand": FilterSettings(_("Brand"), ("name",), api_endpoint="/brands/"),
+    "color": FilterSettings(_("Color"), ("name",), api_endpoint="/colors/"),
     "outer_material": FilterSettings(
-        _("Outer material"), ("name",), api_endpoint="outer_materials"
+        _("Outer material"), ("name",), api_endpoint="/outer_materials/"
     ),
 }
 

@@ -108,9 +108,6 @@ async def _answer_product_filter(
 
     choices_getter = FILTER_CHOICES_GETTERS[filter_name]
     filter_choices = await choices_getter(relation_value=relation_value)
-    logger.debug(
-        "Choices cache info: %s", choices_getter.func.cache_info()
-    )  # Accessing .func because all choices getters are partials
 
     filter_title = _(filter_settings.title)
     text = emojize(
