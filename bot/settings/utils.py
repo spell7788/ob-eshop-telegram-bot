@@ -7,3 +7,4 @@ class FilterSettings(NamedTuple):
     api_endpoint: Optional[str] = None
     depends_on: Optional[str] = None
     query_name: Optional[str] = None
+    choices_keyboard_width: Optional[int] = 4

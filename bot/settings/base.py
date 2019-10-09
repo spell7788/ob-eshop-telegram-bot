@@ -50,9 +50,13 @@ PRODUCT_FILTERS: Dict[str, FilterSettings] = {
         _("Gender"), ("title",), api_endpoint="/categories/", query_name="category"
     ),
     "category": FilterSettings(
-        _("Category"), ("title",), api_endpoint="/categories/", depends_on="gender"
+        _("Category"),
+        ("title",),
+        api_endpoint="/categories/",
+        depends_on="gender",
+        choices_keyboard_width=3,
     ),
-    "season": FilterSettings(_("Season"), ("name",)),
+    "season": FilterSettings(_("Season"), ("name",), choices_keyboard_width=2),
     "brand": FilterSettings(_("Brand"), ("name",), api_endpoint="/brands/"),
     "color": FilterSettings(_("Color"), ("name",), api_endpoint="/colors/"),
     "outer_material": FilterSettings(

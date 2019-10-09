@@ -30,9 +30,9 @@ prime_keyboard = ReplyKeyboardMarkup(
 
 
 def get_filter_choices_keyboard(
-    choices: Sequence[FilterChoice]
+    choices: Sequence[FilterChoice], *, row_width: int
 ) -> InlineKeyboardMarkup:
-    markup = InlineKeyboardMarkup()
+    markup = InlineKeyboardMarkup(row_width=row_width)
     for choice in choices:
         markup.insert(
             InlineKeyboardButton(choice.label, callback_data=choice.callback_data)

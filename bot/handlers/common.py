@@ -115,14 +115,14 @@ async def _answer_product_filter(
             filter_title=filter_title
         )
     )
+    keyboard = get_filter_choices_keyboard(
+        filter_choices, row_width=filter_settings.choices_keyboard_width
+    )
+
     if not edit:
-        await message.answer(
-            text, reply_markup=get_filter_choices_keyboard(filter_choices)
-        )
+        await message.answer(text, reply_markup=keyboard)
     else:
-        await message.edit_text(
-            text, reply_markup=get_filter_choices_keyboard(filter_choices)
-        )
+        await message.edit_text(text, reply_markup=keyboard)
 
 
 async def answer_next_filter_or_results(
