@@ -30,7 +30,7 @@ prime_keyboard = ReplyKeyboardMarkup(
 
 
 def get_filter_choices_keyboard(
-    filter_name: str, choices: Sequence[FilterChoice]
+    choices: Sequence[FilterChoice]
 ) -> InlineKeyboardMarkup:
     markup = InlineKeyboardMarkup()
     for choice in choices:

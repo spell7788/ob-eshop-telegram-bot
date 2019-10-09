@@ -117,11 +117,11 @@ async def _answer_product_filter(
     )
     if not edit:
         await message.answer(
-            text, reply_markup=get_filter_choices_keyboard(filter_name, filter_choices)
+            text, reply_markup=get_filter_choices_keyboard(filter_choices)
         )
     else:
         await message.edit_text(
-            text, reply_markup=get_filter_choices_keyboard(filter_name, filter_choices)
+            text, reply_markup=get_filter_choices_keyboard(filter_choices)
         )
 
 
