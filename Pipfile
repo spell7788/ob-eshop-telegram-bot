@@ -8,6 +8,9 @@ flake8 = "*"
 black = "*"
 mypy = "*"
 isort = "*"
+autohooks = "*"
+autohooks-plugin-black = "*"
+autohooks-plugin-isort = "*"
 
 [packages]
 aiogram = "*"
