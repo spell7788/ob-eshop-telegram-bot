@@ -58,7 +58,8 @@ class Caption:
     async def _filters_text_pairs(self) -> AsyncIterator[Tuple[str, str]]:
         filters = await self.product_filters.get_with_associated_choices()
         for filter_name, choice in filters.items():
-            yield (settings.PRODUCT_FILTERS[filter_name].title, choice.label)
+            title = _(settings.PRODUCT_FILTERS[filter_name].title)
+            yield (title, choice.label)
 
     def _join_product_attributes(self) -> str:
         attrs_texts = [
