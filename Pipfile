@@ -15,7 +15,7 @@ autohooks-plugin-isort = "*"
 [packages]
 aiogram = "*"
 emoji = "*"
-aiohttp = "*"
+aiohttp = "~=3.6"
 furl = "*"
 aiodns = "*"
 cchardet = "*"
