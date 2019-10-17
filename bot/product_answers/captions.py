@@ -92,7 +92,7 @@ class SlideCaption(Caption):
             self._new_text,
             ":small_blue_diamond:",
             self._product_link,
-            ":heavy_dollar_sign:",
+            ":moneybag:",
             self._price_text,
         )
 
@@ -107,6 +107,6 @@ class BookmarkCaption(Caption):
             self._new_text,
             ":small_orange_diamond:",
             self._product_link,
-            ":heavy_dollar_sign:",
+            ":moneybag:",
             self._price_text,
         )
