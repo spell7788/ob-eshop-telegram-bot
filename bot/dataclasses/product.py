@@ -4,7 +4,7 @@ from typing import NamedTuple, Optional, Sequence
 
 from babel.numbers import format_currency
 
-from ..bot import _
+from ..bot import N_  # type: ignore
 
 
 class Picture(NamedTuple):
@@ -28,18 +28,18 @@ class StockItem(NamedTuple):
 class Product:
     url: str = field(repr=False)
     id: int
-    code: str = field(metadata={"title": _("Code")})
+    code: str = field(metadata={"title": N_("Code")})
     name: str
-    brand: str = field(repr=False, metadata={"title": _("Brand")})
-    category: str = field(repr=False, metadata={"title": _("Category")})
-    season: str = field(repr=False, metadata={"title": _("Season")})
+    brand: str = field(repr=False, metadata={"title": N_("Brand")})
+    category: str = field(repr=False, metadata={"title": N_("Category")})
+    season: str = field(repr=False, metadata={"title": N_("Season")})
     price: str
     price_currency: str
     is_new: bool
-    color: str = field(repr=False, metadata={"title": _("Color")})
-    inner_material: str = field(repr=False, metadata={"title": _("Inner material")})
-    outer_material: str = field(repr=False, metadata={"title": _("Outer material")})
-    sole: Optional[str] = field(repr=False, metadata={"title": _("Sole")})
+    color: str = field(repr=False, metadata={"title": N_("Color")})
+    inner_material: str = field(repr=False, metadata={"title": N_("Inner material")})
+    outer_material: str = field(repr=False, metadata={"title": N_("Outer material")})
+    sole: Optional[str] = field(repr=False, metadata={"title": N_("Sole")})
     main_picture: Picture = field(repr=False)
     secondary_pictures: Sequence[Picture] = field(repr=False)
     stock_items: Sequence[StockItem] = field(repr=False)

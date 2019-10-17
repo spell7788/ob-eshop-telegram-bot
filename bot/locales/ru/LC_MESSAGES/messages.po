@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-04 16:49+0300\n"
+"POT-Creation-Date: 2019-10-17 16:30+0300\n"
 "PO-Revision-Date: 2019-07-03 20:10+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: bot/__main__.py:12
+#: bot/__main__.py:11
 msgid "I started at {now}"
 msgstr "Я запустился в {now}"
 
-#: bot/__main__.py:25
+#: bot/__main__.py:24
 msgid "I turned off at {now}"
 msgstr "Я выключился в {now}"
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Code"
 msgstr "Код"
 
-#: bot/dataclasses/product.py:33 bot/settings/base.py:56
+#: bot/dataclasses/product.py:33 bot/settings/base.py:60
 msgid "Brand"
 msgstr "Бренд"
 
@@ -145,11 +145,11 @@ msgstr "Бренд"
 msgid "Category"
 msgstr "Категория"
 
-#: bot/dataclasses/product.py:35 bot/settings/base.py:55
+#: bot/dataclasses/product.py:35 bot/settings/base.py:59
 msgid "Season"
 msgstr "Сезон"
 
-#: bot/dataclasses/product.py:39 bot/settings/base.py:57
+#: bot/dataclasses/product.py:39 bot/settings/base.py:61
 msgid "Color"
 msgstr "Цвет"
 
@@ -157,7 +157,7 @@ msgstr "Цвет"
 msgid "Inner material"
 msgstr "Внешний материал"
 
-#: bot/dataclasses/product.py:41 bot/settings/base.py:59
+#: bot/dataclasses/product.py:41 bot/settings/base.py:63
 msgid "Outer material"
 msgstr "Внутренний материал"
 
@@ -201,7 +201,7 @@ msgstr "Что..? :confused: Я не могу распознать это."
 msgid "No results, try to /browse again."
 msgstr "Нет результатов, попробуйте /browse снова."
 
-#: bot/handlers/common.py:117
+#: bot/handlers/common.py:114
 msgid ":wavy_dash: Select a {filter_title} option"
 msgstr ":wavy_dash: Выберите {filter_title}"
 
@@ -233,7 +233,7 @@ msgstr ":bookmark: Закладка"
 msgid "New"
 msgstr "Новинка"
 
-#: bot/product_answers/captions.py:105
+#: bot/product_answers/captions.py:106
 msgid "Bookmark"
 msgstr "Закладка"
 
@@ -257,19 +257,19 @@ msgstr "Осень"
 msgid "Gender"
 msgstr "Пол"
 
-#: bot/settings/base.py:64
+#: bot/settings/base.py:68
 msgid "Nova Poshta (Сustomer pays shipping)"
 msgstr "Новая Почта (Клиент оплачивает доставку)"
 
-#: bot/settings/base.py:64
+#: bot/settings/base.py:68
 msgid "Nova Poshta"
 msgstr "Новая Почта"
 
-#: bot/settings/base.py:65
+#: bot/settings/base.py:69
 msgid "Local pickup (Mykolaiv)"
 msgstr "Самовывоз (г. Николаев)"
 
-#: bot/settings/base.py:65
+#: bot/settings/base.py:69
 msgid "Local pickup"
 msgstr "Самовывоз"
 

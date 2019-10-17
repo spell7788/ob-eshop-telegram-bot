@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-04 16:49+0300\n"
+"POT-Creation-Date: 2019-10-17 16:30+0300\n"
 "PO-Revision-Date: 2019-09-29 14:34+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: bot/__main__.py:12
+#: bot/__main__.py:11
 msgid "I started at {now}"
 msgstr ""
 
-#: bot/__main__.py:25
+#: bot/__main__.py:24
 msgid "I turned off at {now}"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
-#: bot/dataclasses/product.py:33 bot/settings/base.py:56
+#: bot/dataclasses/product.py:33 bot/settings/base.py:60
 msgid "Brand"
 msgstr ""
 
@@ -112,11 +112,11 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: bot/dataclasses/product.py:35 bot/settings/base.py:55
+#: bot/dataclasses/product.py:35 bot/settings/base.py:59
 msgid "Season"
 msgstr ""
 
-#: bot/dataclasses/product.py:39 bot/settings/base.py:57
+#: bot/dataclasses/product.py:39 bot/settings/base.py:61
 msgid "Color"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Inner material"
 msgstr ""
 
-#: bot/dataclasses/product.py:41 bot/settings/base.py:59
+#: bot/dataclasses/product.py:41 bot/settings/base.py:63
 msgid "Outer material"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "No results, try to /browse again."
 msgstr ""
 
-#: bot/handlers/common.py:117
+#: bot/handlers/common.py:114
 msgid ":wavy_dash: Select a {filter_title} option"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: bot/product_answers/captions.py:105
+#: bot/product_answers/captions.py:106
 msgid "Bookmark"
 msgstr ""
 
@@ -222,19 +222,19 @@ msgstr ""
 msgid "Gender"
 msgstr ""
 
-#: bot/settings/base.py:64
+#: bot/settings/base.py:68
 msgid "Nova Poshta (Сustomer pays shipping)"
 msgstr ""
 
-#: bot/settings/base.py:64
+#: bot/settings/base.py:68
 msgid "Nova Poshta"
 msgstr ""
 
-#: bot/settings/base.py:65
+#: bot/settings/base.py:69
 msgid "Local pickup (Mykolaiv)"
 msgstr ""
 
-#: bot/settings/base.py:65
+#: bot/settings/base.py:69
 msgid "Local pickup"
 msgstr ""
 
