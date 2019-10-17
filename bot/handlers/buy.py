@@ -35,7 +35,9 @@ async def answer_product_invoice(
 ) -> None:
     product = await get_product(state, product_index, product_filters)
     product_identifier = (
-        CallbackForm(str(product_index)) + product_filters.as_query_string()
+        CallbackForm(str(product_index))
+        + product_filters.as_query_string()
+        + str(product_size)
     ).callback_string
     payload = json.dumps(
         (product_index, product_filters.as_query_string(), product_size)
@@ -74,14 +76,19 @@ async def process_start_invoice_param(
     product_identifier, = handled_params
     logger.debug("Product identifier: %s", product_identifier)
 
-    match = re.match(PRODUCT_REGEX, product_identifier)
+    match = re.match(rf"{PRODUCT_REGEX}:(\d+)", product_identifier)
     if not match:
         await message.answer(_("Wrong invoice link."))
         return
 
-    product_index, product_filters = match.groups()
+    product_index, product_filters, product_size = match.groups()
     await answer_product_invoice(
-        message, state, locale, int(product_index), ProductFilters(product_filters)
+        message,
+        state,
+        locale,
+        int(product_index),
+        ProductFilters(product_filters),
+        int(product_size),
     )
 
 
