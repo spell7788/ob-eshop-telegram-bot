@@ -11,7 +11,7 @@ from aiogram.types import (
 from aiogram.utils.emoji import emojize
 
 from . import callback_forms
-from .bot import N_, _
+from .bot import N_, _  # type: ignore
 from .dataclasses import Product
 from .product_filters import FilterChoice, ProductFilters
 

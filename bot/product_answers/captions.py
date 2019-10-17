@@ -5,7 +5,7 @@ from typing import AsyncIterator, Iterator, NamedTuple, Optional, Tuple
 from aiogram.utils.emoji import emojize
 from aiogram.utils.markdown import bold, italic, link as md_link, text as md_text
 
-from ..bot import _, settings
+from ..bot import _, settings  # type: ignore
 from ..dataclasses import Product
 from ..product_filters import ProductFilters
 

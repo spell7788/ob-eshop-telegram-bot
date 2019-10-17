@@ -4,7 +4,7 @@ from typing import Any, Dict, Type, TypeVar
 
 from aiogram.dispatcher import FSMContext
 
-from ..bot import settings
+from ..bot import settings  # type: ignore
 from ..client import Client
 from ..dataclasses import Product, ProductPage
 from ..product_filters import ProductFilters

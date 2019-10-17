@@ -3,7 +3,7 @@ import logging
 from aiogram import types
 from aiogram.dispatcher import FSMContext, filters
 
-from ..bot import dp, settings
+from ..bot import dp, settings  # type: ignore
 from ..states import ProductFiltersForm
 from ..utils import handle_regex_params
 from .common import answer_next_filter_or_results

@@ -9,7 +9,7 @@ from aiogram.types import ParseMode
 from aiogram.utils.emoji import emojize
 
 from .. import texts
-from ..bot import _, bot, settings
+from ..bot import _, bot, settings  # type: ignore
 from ..dataclasses import ProductPageException
 from ..keyboards import get_filter_choices_keyboard
 from ..product_answers import ProductAnswer, get_product, get_product_slide_answer

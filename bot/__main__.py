@@ -1,6 +1,6 @@
 from aiogram import Dispatcher, executor
 
-from .bot import _, bot, dp, get_http_session, settings
+from .bot import _, bot, dp, get_http_session, settings  # type: ignore
 from .utils import message_admins, tz_aware_now
 
 

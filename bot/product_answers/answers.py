@@ -5,7 +5,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.emoji import emojize
 
 from .. import callback_forms
-from ..bot import _, settings
+from ..bot import _, settings  # type: ignore
 from ..dataclasses import Product, ProductPage
 from ..product_filters import ProductFilters
 from .captions import BookmarkCaption, Caption, SlideCaption

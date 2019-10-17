@@ -7,7 +7,7 @@ from aiogram.types import ParseMode
 from aiogram.utils.emoji import emojize
 
 from .. import texts
-from ..bot import _, dp, settings
+from ..bot import _, dp, settings  # type: ignore
 from ..keyboards import PRIME_KEYBOARD_TEXTS, prime_keyboard
 from ..states import ProductFiltersForm
 from .common import answer_next_filter_or_results

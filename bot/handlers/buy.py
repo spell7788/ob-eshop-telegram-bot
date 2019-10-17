@@ -9,7 +9,7 @@ from aiogram.types.message import ContentTypes
 from aiogram.utils.emoji import emojize
 
 from .. import texts
-from ..bot import _, bot, dp, settings
+from ..bot import _, bot, dp, settings  # type: ignore
 from ..callback_forms import CallbackForm
 from ..keyboards import get_invoice_keyboard, get_product_sizes_keyboard
 from ..product_answers import get_product

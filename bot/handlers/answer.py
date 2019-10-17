@@ -6,7 +6,7 @@ from aiogram.dispatcher import FSMContext, filters
 from aiogram.dispatcher.filters.state import any_state
 from aiogram.utils.exceptions import Throttled
 
-from ..bot import _, dp
+from ..bot import _, dp  # type: ignore
 from ..product_answers import get_bookmark_answer, get_product, get_product_slide_answer
 from .common import PRODUCT_REGEX, answer_product_slide, handle_product_params
 
