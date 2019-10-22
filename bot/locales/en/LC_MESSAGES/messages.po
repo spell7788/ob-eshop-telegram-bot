@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-17 16:30+0300\n"
+"POT-Creation-Date: 2019-10-22 19:19+0300\n"
 "PO-Revision-Date: 2019-09-29 14:34+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -27,15 +27,15 @@ msgid "I turned off at {now}"
 msgstr ""
 
 #: bot/keyboards.py:22
-msgid "🔍 Browse"
+msgid "Browse"
 msgstr ""
 
 #: bot/keyboards.py:22
-msgid "💫 Help"
+msgid "Help"
 msgstr ""
 
 #: bot/keyboards.py:22
-msgid "📞 Contacts"
+msgid "Contacts"
 msgstr ""
 
 #: bot/keyboards.py:43
@@ -136,23 +136,23 @@ msgstr ""
 msgid "Please try again in a minute."
 msgstr ""
 
-#: bot/handlers/buy.py:52
+#: bot/handlers/buy.py:54
 msgid "Price"
 msgstr ""
 
-#: bot/handlers/buy.py:79
+#: bot/handlers/buy.py:81
 msgid "Wrong invoice link."
 msgstr ""
 
-#: bot/handlers/buy.py:103
+#: bot/handlers/buy.py:110
 msgid ":shoe: Choose shoe size"
 msgstr ""
 
-#: bot/handlers/buy.py:160
+#: bot/handlers/buy.py:167
 msgid "Something went wrong. Try again later."
 msgstr ""
 
-#: bot/handlers/buy.py:171
+#: bot/handlers/buy.py:178
 msgid ""
 ":clap: :smile: Woah! Thank's for the purchase! We will contact you "
 "shortly."
@@ -323,5 +323,14 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Nova Poshta (Сustomer pays)"
+#~ msgstr ""
+
+#~ msgid "🔍 Browse"
+#~ msgstr ""
+
+#~ msgid "💫 Help"
+#~ msgstr ""
+
+#~ msgid "📞 Contacts"
 #~ msgstr ""
 

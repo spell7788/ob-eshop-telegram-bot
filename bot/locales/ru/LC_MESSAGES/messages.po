@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-17 16:30+0300\n"
+"POT-Creation-Date: 2019-10-22 19:19+0300\n"
 "PO-Revision-Date: 2019-07-03 20:10+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -28,16 +28,16 @@ msgid "I turned off at {now}"
 msgstr "Я выключился в {now}"
 
 #: bot/keyboards.py:22
-msgid "🔍 Browse"
-msgstr "🔍 Обзор"
+msgid "Browse"
+msgstr "Просмотр"
 
 #: bot/keyboards.py:22
-msgid "💫 Help"
-msgstr "💫 Помощь"
+msgid "Help"
+msgstr "Помощь"
 
 #: bot/keyboards.py:22
-msgid "📞 Contacts"
-msgstr "📞 Контакты"
+msgid "Contacts"
+msgstr "Контакты"
 
 #: bot/keyboards.py:43
 msgid ":white_small_square: Skip"
@@ -169,23 +169,23 @@ msgstr "Подошва"
 msgid "Please try again in a minute."
 msgstr "Пожалуйста попробуйте снова через минуту."
 
-#: bot/handlers/buy.py:52
+#: bot/handlers/buy.py:54
 msgid "Price"
 msgstr "Цена"
 
-#: bot/handlers/buy.py:79
+#: bot/handlers/buy.py:81
 msgid "Wrong invoice link."
 msgstr "Неправильная ссылка заказа"
 
-#: bot/handlers/buy.py:103
+#: bot/handlers/buy.py:110
 msgid ":shoe: Choose shoe size"
 msgstr ":shoe: Выберите размер обуви"
 
-#: bot/handlers/buy.py:160
+#: bot/handlers/buy.py:167
 msgid "Something went wrong. Try again later."
 msgstr "Что-то пошло не так. Попробуйте позже."
 
-#: bot/handlers/buy.py:171
+#: bot/handlers/buy.py:178
 msgid ""
 ":clap: :smile: Woah! Thank's for the purchase! We will contact you "
 "shortly."
@@ -272,4 +272,3 @@ msgstr "Самовывоз (г. Николаев)"
 #: bot/settings/base.py:69
 msgid "Local pickup"
 msgstr "Самовывоз"
-

@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 
 PRIME_KEYBOARD_TEXTS = OrderedDict(
-    [("browse", N_("🔍 Browse")), ("help", N_("💫 Help")), ("contacts", N_("📞 Contacts"))]
+    [("browse", N_("Browse")), ("help", N_("Help")), ("contacts", N_("Contacts"))]
 )
 
 prime_keyboard = ReplyKeyboardMarkup(
