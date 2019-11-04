@@ -31,16 +31,16 @@ async def answer_product_invoice(
     locale: str,
     product_index: int,
     product_filters: ProductFilters,
-    product_size: int,
+    product_size_id: int,
 ) -> None:
     product = await get_product(state, product_index, product_filters)
     product_identifier = (
         CallbackForm(str(product_index))
         + product_filters.as_query_string()
-        + str(product_size)
+        + str(product_size_id)
     ).callback_string
     payload = json.dumps(
-        (product_index, product_filters.as_query_string(), product_size)
+        (product_index, product_filters.as_query_string(), product_size_id)
     )
 
     await bot.send_invoice(
@@ -127,16 +127,16 @@ async def process_buy(
     locale: str,
     **kwargs,
 ) -> None:
-    size, product_index, product_filters = handled_params
+    size_id, product_index, product_filters = handled_params
     await callback_query.message.delete()
     await answer_product_invoice(
-        callback_query.message, state, locale, product_index, product_filters, size
+        callback_query.message, state, locale, product_index, product_filters, size_id
     )
     await callback_query.answer()
 
 
 @dp.shipping_query_handler(state=any_state)
-async def process_shipping(shipping_query: types.ShippingQuery):
+async def process_shipping(shipping_query: types.ShippingQuery) -> None:
     shipping_options = [
         types.ShippingOption(
             id,
@@ -156,7 +156,7 @@ async def process_shipping(shipping_query: types.ShippingQuery):
 @dp.pre_checkout_query_handler(state=any_state)
 async def process_pre_checkout(
     pre_checkout_query: types.PreCheckoutQuery, state: FSMContext
-):
+) -> None:
     try:
         await notify_managers_new_order(state, pre_checkout_query)
     except Exception:

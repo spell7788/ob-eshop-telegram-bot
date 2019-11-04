@@ -55,10 +55,10 @@ def get_product_sizes_keyboard(
     product: Product, product_index: int, product_filters: ProductFilters
 ) -> InlineKeyboardMarkup:
     markup = InlineKeyboardMarkup(row_width=5)
-    for __, (__, size), __ in product.stock_items:
+    for __, (size_id, size), __ in product.stock_items:
         callback_data = (
             callback_forms.BUY
-            + str(size)
+            + str(size_id)
             + str(product_index)
             + product_filters.as_query_string()
         ).callback_string
