@@ -1,6 +1,4 @@
-import json
 import logging
-from string import Template
 from typing import Dict, Optional
 
 from aiogram import types
@@ -8,18 +6,12 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import ParseMode
 from aiogram.utils.emoji import emojize
 
-from .. import texts
-from ..bot import _, bot, settings  # type: ignore
+from ..bot import _, settings  # type: ignore
 from ..dataclasses import ProductPageException
 from ..keyboards import get_filter_choices_keyboard
-from ..product_answers import ProductAnswer, get_product, get_product_slide_answer
+from ..product_answers import ProductAnswer, get_product_slide_answer
 from ..product_filters import FILTER_CHOICES_GETTERS, ProductFilters
-from ..utils import (
-    from_telegram_price,
-    handle_regex_params,
-    message_managers,
-    tz_aware_now,
-)
+from ..utils import handle_regex_params
 
 logger = logging.getLogger(__name__)
 
@@ -137,30 +129,3 @@ async def answer_next_filter_or_results(
     else:
         await message.delete()
         await _answer_filter_results(message, state, locale)
-
-
-async def notify_managers_new_order(
-    state: FSMContext, pre_checkout_query: types.PreCheckoutQuery
-) -> None:
-    payload = json.loads(pre_checkout_query.invoice_payload)
-    product_index, product_filters, size = payload
-    product = await get_product(state, product_index, ProductFilters(product_filters))
-    text = Template(texts.ORDER_NOTIFICATION.value).substitute(
-        datetime_now=tz_aware_now().strftime(settings.SHORT_DATETIME_FORMAT),
-        total_amount=from_telegram_price(pre_checkout_query.total_amount),
-        currency=pre_checkout_query.currency,
-        product_name=product.name,
-        product_code=product.code,
-        product_url=product.url,
-        size=size,
-        **{key: value for key, value in pre_checkout_query.order_info},
-        **{key: value for key, value in pre_checkout_query.order_info.shipping_address},
-    )
-    await message_managers(
-        lambda manager_id: bot.send_message(
-            manager_id,
-            text,
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-        )
-    )

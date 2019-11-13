@@ -1,6 +1,7 @@
 from aiogram import Dispatcher, executor
 
-from .bot import _, bot, dp, get_http_session, settings  # type: ignore
+from .bot import _, bot, dp, settings  # type: ignore
+from .client import Client
 from .utils import message_admins, tz_aware_now
 
 
@@ -14,8 +15,8 @@ async def on_startup(dispatcher: Dispatcher) -> None:
 
 
 async def on_shutdown(dispatcher: Dispatcher) -> None:
-    session = get_http_session()
-    await session.close()
+    client = Client.get_client()
+    await client.close()
     await dispatcher.storage.close()
     await dispatcher.storage.wait_closed()
     now = tz_aware_now().strftime(settings.DATETIME_FORMAT)

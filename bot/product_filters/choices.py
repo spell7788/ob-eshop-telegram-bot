@@ -51,7 +51,7 @@ async def get_choices(
 ) -> Sequence[FilterChoice]:
     api_endpoint = settings.PRODUCT_FILTERS[filter_name].api_endpoint
     if api_endpoint is not None:
-        client = Client()
+        client = Client.get_client()
         choices = await client.fetch_filter_choices(api_endpoint)
         logger.debug("Choices cache info: %s", client.fetch_filter_choices.cache_info())
     else:

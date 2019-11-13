@@ -24,7 +24,8 @@ async def get_product_page(
     if cached_page and cached_page["filters"] == product_filters:
         raw_page = cached_page["page"]
     else:
-        raw_page = await Client().fetch_product_page(product_filters)
+        client = Client.get_client()
+        raw_page = await client.fetch_product_page(product_filters)
         cached_page = {"page": raw_page, "filters": product_filters.data}
         await state.update_data({settings.CACHED_PAGE_STORAGE_KEY: cached_page})
 

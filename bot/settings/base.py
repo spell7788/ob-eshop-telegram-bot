@@ -8,6 +8,8 @@ from .utils import FilterSettings
 
 env = Env()
 
+DEBUG = False
+
 BASE_DIR = Path(__file__).parent.parent
 
 LOCALES_DIR = BASE_DIR / "locales"
@@ -17,8 +19,6 @@ I18N_DOMAIN = "messages"
 BOT_TOKEN = env("BOT_TOKEN")
 
 ADMINS = env.list("ADMINS", subcast=int)
-
-MANAGERS = env.list("MANAGERS", subcast=int)
 
 BASE_URL = env("BASE_URL")
 
@@ -66,7 +66,7 @@ PRODUCT_FILTERS: Dict[str, FilterSettings] = {
 
 SHIPPING_OPTIONS = [
     ("nova_poshta", _("Nova Poshta (Сustomer pays shipping)"), [(_("Nova Poshta"), 0)]),
-    ("local_pickup", _("Local pickup (Mykolaiv)"), [(_("Local pickup"), 0)]),
+    ("pickup", _("Local pickup (Mykolaiv)"), [(_("Local pickup"), 0)]),
 ]
 
 SUCCESSFUL_PAYMENT_STICKER_ID = env("SUCCESSFUL_PAYMENT_STICKER_ID")

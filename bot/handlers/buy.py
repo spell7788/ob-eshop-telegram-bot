@@ -2,6 +2,7 @@ import json
 import logging
 import re
 
+import aiohttp
 from aiogram import types
 from aiogram.dispatcher import FSMContext, filters
 from aiogram.dispatcher.filters.state import any_state
@@ -11,6 +12,7 @@ from aiogram.utils.emoji import emojize
 from .. import texts
 from ..bot import _, bot, dp, settings  # type: ignore
 from ..callback_forms import CallbackForm
+from ..client import Client
 from ..keyboards import get_invoice_keyboard, get_product_sizes_keyboard
 from ..product_answers import get_product
 from ..product_filters import ProductFilters
@@ -20,7 +22,8 @@ from ..utils import (
     handle_regex_params,
     to_telegram_price,
 )
-from .common import PRODUCT_REGEX, handle_product_params, notify_managers_new_order
+from .common import PRODUCT_REGEX, handle_product_params
+from .utils import prepare_order_data
 
 logger = logging.getLogger(__name__)
 
@@ -157,10 +160,12 @@ async def process_shipping(shipping_query: types.ShippingQuery) -> None:
 async def process_pre_checkout(
     pre_checkout_query: types.PreCheckoutQuery, state: FSMContext
 ) -> None:
+    order_data = await prepare_order_data(state, pre_checkout_query)
+    client = Client.get_client()
     try:
-        await notify_managers_new_order(state, pre_checkout_query)
-    except Exception:
-        logger.exception("An order notification wasn't sent to the admin.")
+        await client.create_order(order_data)
+    except (aiohttp.ClientError, ValueError):
+        logger.exception("Unable to create order with data: %s", order_data)
         await bot.answer_pre_checkout_query(
             pre_checkout_query.id,
             ok=False,

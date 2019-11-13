@@ -24,6 +24,10 @@ def simple_repr(cls: Type[T]) -> Type[T]:
     return cls
 
 
+def is_admin(user_id: int):
+    return user_id in settings.ADMINS
+
+
 async def mass_massage(
     recipients: Sequence[int], message: Callable[[int], Awaitable[None]]
 ) -> None:
@@ -32,8 +36,6 @@ async def mass_massage(
 
 
 message_admins = partial(mass_massage, settings.ADMINS)
-
-message_managers = partial(mass_massage, settings.MANAGERS)
 
 
 def tz_aware_datetime(utc_dt: datetime) -> datetime:
